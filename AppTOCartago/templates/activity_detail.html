@@ -1,0 +1,90 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load staticfiles %}
+	<meta charset="UTF-8">
+	<title>{{ plan.name }}</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<nav class="row between middle">				
+				<div class="col-4">
+					<a href="/">
+						<img src="{% static 'assets/cartago1.png' %}">
+					</a>
+				</div>	
+
+				<div class="col-3 end">
+
+					<ul class="row between">
+
+						<li class="col">
+							<a href="{% url 'hotels.views.hotels' %}">Hoteles </a> |
+						</li> 
+
+						<li class="col">
+							<a href="{% url 'plans.views.plans' %}">Planes</a> |
+						</li>
+
+						<li class="col">
+							<a href="{% url 'transports.views.transports' %}">Transporte</a> |
+						</li>
+
+						<li class="col">
+							<a href="{% url 'contacts.views.new_contact' %}">Contacto</a> | 
+						</li>
+
+					</ul>
+
+				</div>
+
+			</nav>			
+		</div>		
+
+	</header>	
+
+	<section class="full-height">	
+		<div class="container">
+			<div class="row">
+					<h2 class="col-12">{{ activity.name }}</h2>
+					<p class="col-12">{{ activity.description }}</p>
+			</div>
+
+            <div class="row">                
+                <div class="col-7">                	
+                	<img src="{{ activity.image.url }}" alt="">					
+                </div>
+                <div class="col-3">
+                	<div class="row">
+                		<div class="col-12 info">
+                			Precio: {{ activity.price}}	
+                		</div>
+                	</div>
+                </div>
+            </div>	
+            
+            <div class="row">
+               	<h3 class="col-12">
+               		<a href="{% url 'activities.views.activities' %}">Actividades</a>
+               	</h3>
+            </div>		
+            <div class="row">
+            	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3976.1198438899014!2d-75.91359971007074!3d4.749211815357337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1456795896730" width="600" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+		</div>
+		
+	</section>	
+
+	<footer>
+		<div class="container">
+			<div class="row center">
+				2016 - <a href="https://twitter.com/CarlosAM_7" target="_blank">Carlos Martinez</a>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>

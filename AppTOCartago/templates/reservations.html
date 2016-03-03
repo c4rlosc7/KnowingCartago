@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>	
+	<meta charset="UTP-8">
+	<title>Reservas</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+
+	<header>
+		<div class="container">
+			<nav class="row between middle">				
+				<div class="col-4">
+					<a href="/">
+						<img src="{% static 'assets/cartago1.png' %}">
+					</a>
+				</div>	
+
+				<div class="col-3 end">
+
+					<ul class="row between">
+
+						<li class="col">
+							<a href="{% url 'hotels.views.hotels' %}">Hoteles </a> |
+						</li> 
+
+						<li class="col">
+							<a href="{% url 'plans.views.plans' %}">Planes</a> |
+						</li>
+
+						<li class="col">
+							<a href="{% url 'transports.views.transports' %}">Transporte</a> |
+						</li>
+
+						<li class="col">
+							<a href="{% url 'contacts.views.new_contact' %}">Contacto</a> | 
+						</li>
+
+					</ul>
+
+				</div>
+
+			</nav>			
+		</div>		
+
+	</header>
+
+	<section class="full-height">	
+		<div class="container">		
+			<div class="row">
+				<div class="col-10">
+					<h2>
+						Ven y disfruta del mejor sol de Colombia.
+					</h2>					
+				</div>			
+
+				<div class="col-3">
+					<form method="POST">
+						{% csrf_token %}
+						{{ form.as_p }}
+						<button type="submit">Submit</button>
+					</form>
+					formato fecha [año-mes-dia]
+				</div>
+			</div>
+		</div>
+	</section>	
+
+	<footer>
+		<div class="container">
+			<div class="row center">
+				2016 - <a href="https://twitter.com/CarlosAM_7" target="_blank">Carlos Martinez</a>
+			</div>
+		</div>
+	</footer>	
+
+</body>
+</html>
